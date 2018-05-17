@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-const picture = require('./picture.json')
+const pictureData = require('./picture.json')
 const userData = require('./userData.json')
 mongoose.connect('mongodb://127.0.0.1:27017/shipWeb');
 // 用户信息的数据结构模型
@@ -51,13 +51,13 @@ const initData = function () {
   db.pictureModel.find({}, function(err, doc){
     if (err) {
       console.log('initData出错：' + err);
-    } else if (!doc.length) {
+    } else if (doc.length) {
       console.log('db pictureModel open first time');
       // 初始化数据，遍历插入；先打印出来看看
-      picture.map(brand => {
-        db.pictureModel.create(brand)
+      pictureData.map(pic => {
+        db.pictureModel.create(pic)
       })
-      // console.log(picture)
+      console.log(pictureData)
 
     } else {
       console.log('db open not first time');
@@ -67,11 +67,11 @@ const initData = function () {
   db.userModel.find({}, function(err, doc){
     if (err) {
       console.log('initData出错：' + err);
-    } else if (!doc.length) {
+    } else if (doc.length) {
       console.log('db userModel open first time');
       // 初始化数据，遍历插入；先打印出来看看
-      userData.map(brand => {
-        db.userModel.create(brand)
+      userData.map(user => {
+        db.userModel.create(user)
       })
       // console.log(picture)
 
