@@ -1,0 +1,155 @@
+[
+  {
+    "name":"myAlbum",
+    "id": 1,
+    "author": "cicistream",
+    "des": "一些收集的图片，方便以后查找",
+    "authorUrl":"http://p8tc04lo6.bkt.clouddn.com/me.jpg",
+    "fans": [],
+    "tags": [],
+    "hasPic": [
+        {   
+          "id": 10,
+          "name": "hua",
+          "des": "这就是生活吧",
+          "like": 20,
+          "collect": [1,2],
+          "imgUrl": "http://p8tc04lo6.bkt.clouddn.com/alive.jpeg",
+          "authorUrl": "http://p8tc04lo6.bkt.clouddn.com/me.jpg",
+          "albumUrl": "http://p8tc04lo6.bkt.clouddn.com/peiban.jpeg"
+        },
+        {   
+          "id": 20,
+          "name": "cicistream",
+          "des": "一个动漫男孩",
+          "like": 10,
+          "collect": [1,3],
+          "imgUrl": "http://p8tc04lo6.bkt.clouddn.com/boy.jpeg",
+          "authorUrl": "http://p8tc04lo6.bkt.clouddn.com/me.jpg",
+          "albumUrl": "http://p8tc04lo6.bkt.clouddn.com/peiban.jpeg"
+        },
+        {   
+          "id": 30,
+          "name": "cici",
+          "des": "bad liar专辑",
+          "like": 10,
+          "collect": [1,4],
+          "imgUrl": "http://p8tc04lo6.bkt.clouddn.com/badliar.jpeg",
+          "authorUrl": "http://p8tc04lo6.bkt.clouddn.com/me.jpg",
+          "albumUrl": "http://p8tc04lo6.bkt.clouddn.com/peiban.jpeg"
+        },
+        {   
+          "id": 40,
+          "name": "Iris",
+          "des": "云养猫~喵喵~",
+          "like": 10,
+          "collect": [1,4],
+          "imgUrl": "http://p8tc04lo6.bkt.clouddn.com/pet.jpeg",
+          "authorUrl": "http://p8tc04lo6.bkt.clouddn.com/me.jpg",
+          "albumUrl": "http://p8tc04lo6.bkt.clouddn.com/peiban.jpeg"
+        }
+    ]
+  },
+  {
+    "name":"someTry",
+    "id": 2,
+    "author": "cicistream",
+    "authorUrl":"http://p8tc04lo6.bkt.clouddn.com/me.jpg",
+    "des": "相逢于海，相忘于江湖",
+    "fans": [],
+    "tags": [],
+    "hasPic": [
+        {   
+          "id": 20,
+          "name": "cicistream",
+          "des": "一个动漫男孩",
+          "like": 10,
+          "collect": [1,3,2],
+          "imgUrl": "http://p8tc04lo6.bkt.clouddn.com/boy.jpeg",
+          "authorUrl": "http://p8tc04lo6.bkt.clouddn.com/me.jpg",
+          "albumUrl": "http://p8tc04lo6.bkt.clouddn.com/peiban.jpeg"
+        },
+        {   
+          "id": 10,
+          "name": "hua",
+          "des": "这就是生活吧",
+          "like": 20,
+          "collect": [1,2],
+          "imgUrl": "http://p8tc04lo6.bkt.clouddn.com/alive.jpeg",
+          "authorUrl": "http://p8tc04lo6.bkt.clouddn.com/me.jpg",
+          "albumUrl": "http://p8tc04lo6.bkt.clouddn.com/peiban.jpeg"
+        },
+        {   
+          "id": 30,
+          "name": "cici",
+          "des": "bad liar专辑",
+          "like": 10,
+          "collect": [1,2,4],
+          "imgUrl": "http://p8tc04lo6.bkt.clouddn.com/badliar.jpeg",
+          "authorUrl": "http://p8tc04lo6.bkt.clouddn.com/me.jpg",
+          "albumUrl": "http://p8tc04lo6.bkt.clouddn.com/peiban.jpeg"
+        },
+        {   
+          "id": 40,
+          "name": "Iris",
+          "des": "云养猫~喵喵~",
+          "like": 10,
+          "collect": [1,2,5],
+          "imgUrl": "http://p8tc04lo6.bkt.clouddn.com/pet.jpeg",
+          "authorUrl": "http://p8tc04lo6.bkt.clouddn.com/me.jpg",
+          "albumUrl": "http://p8tc04lo6.bkt.clouddn.com/peiban.jpeg"
+        }
+    ]
+  },
+  {
+    "name":"什么花开",
+    "id": 2,
+    "author": "cici",
+    "authorUrl":"http://p8tc04lo6.bkt.clouddn.com/alive.jpeg",
+    "des": "还有什么季节可以让花呢",
+    "fans": [],
+    "tags": [],
+    "hasPic": [
+        {   
+          "id": 10,
+          "name": "hua",
+          "des": "这就是生活吧",
+          "like": 20,
+          "collect": [1,2],
+          "imgUrl": "http://p8tc04lo6.bkt.clouddn.com/alive.jpeg",
+          "authorUrl": "http://p8tc04lo6.bkt.clouddn.com/me.jpg",
+          "albumUrl": "http://p8tc04lo6.bkt.clouddn.com/peiban.jpeg"
+        },
+        {   
+          "id": 20,
+          "name": "cicistream",
+          "des": "一个动漫男孩",
+          "like": 10,
+          "collect": [1,3,2],
+          "imgUrl": "http://p8tc04lo6.bkt.clouddn.com/boy.jpeg",
+          "authorUrl": "http://p8tc04lo6.bkt.clouddn.com/me.jpg",
+          "albumUrl": "http://p8tc04lo6.bkt.clouddn.com/peiban.jpeg"
+        },
+        {   
+          "id": 30,
+          "name": "cici",
+          "des": "bad liar专辑",
+          "like": 10,
+          "collect": [1,2,4],
+          "imgUrl": "http://p8tc04lo6.bkt.clouddn.com/badliar.jpeg",
+          "authorUrl": "http://p8tc04lo6.bkt.clouddn.com/me.jpg",
+          "albumUrl": "http://p8tc04lo6.bkt.clouddn.com/peiban.jpeg"
+        },
+        {   
+          "id": 40,
+          "name": "Iris",
+          "des": "云养猫~喵喵~",
+          "like": 10,
+          "collect": [1,2,5],
+          "imgUrl": "http://p8tc04lo6.bkt.clouddn.com/pet.jpeg",
+          "authorUrl": "http://p8tc04lo6.bkt.clouddn.com/me.jpg",
+          "albumUrl": "http://p8tc04lo6.bkt.clouddn.com/peiban.jpeg"
+        }
+    ]
+  }
+]

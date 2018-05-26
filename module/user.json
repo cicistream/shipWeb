@@ -1,0 +1,43 @@
+[
+  {
+    "name": "cicistream",
+    "pwd": "ren1314",
+    "imgUrl": "http://p8tc04lo6.bkt.clouddn.com/alive.jpeg",
+    "des": "nothing",
+    "albums": [1,2],
+    "idols": ["cici","Iris"],
+    "likes": [
+      {   
+        "id": 10,
+        "name": "hua",
+        "des": "这就是生活吧",
+        "like": 20,
+        "collect": [1,2],
+        "imgUrl": "http://p8tc04lo6.bkt.clouddn.com/alive.jpeg",
+        "authorUrl": "http://p8tc04lo6.bkt.clouddn.com/me.jpg",
+        "albumUrl": "http://p8tc04lo6.bkt.clouddn.com/peiban.jpeg"
+      },
+      {   
+        "id": 20,
+        "name": "cicistream",
+        "des": "一个动漫男孩",
+        "like": 10,
+        "collect": [3,4],
+        "imgUrl": "http://p8tc04lo6.bkt.clouddn.com/boy.jpeg",
+        "authorUrl": "http://p8tc04lo6.bkt.clouddn.com/me.jpg",
+        "albumUrl": "http://p8tc04lo6.bkt.clouddn.com/peiban.jpeg"
+      }
+    ],
+    "fans": ["cici","Iris"]
+  },
+  {
+    "name": "cici",
+    "pwd": "ren1314",
+    "imgUrl": "http://p8tc04lo6.bkt.clouddn.com/alive.jpeg",
+    "des": "nothing",
+    "albums": [],
+    "idols": [],
+    "likes": [],
+    "fans": []
+  }
+]
