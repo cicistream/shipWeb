@@ -15,7 +15,7 @@ module.exports = function(app) {
           result = doc.slice(page*10,doc.length-1);
         }
         else{
-          result = doc.slice(10*page,10*(page+1));
+          result = doc.slice(doc.length-10-10*page,doc.length-10*page);
         }
         return res.json({code: 200, msg:'', data:result});
       }
@@ -33,8 +33,20 @@ module.exports = function(app) {
     })
   })
   app.get('/zone',function(req,res){
-    let name = req.query.name
+    let name = req.query.name;
     db.userModel.findOne({name:req.query.name}, function(err, doc){
+      if (err) {
+        console.log('图片资源出错：' + err);
+      } 
+      else {
+        console.log(name);
+        return res.json({code: 200, msg:'', data: doc})
+      }
+    })
+  });
+  app.get('/zone/myAlbum',function(req,res){
+    let id = req.query.id
+    db.albumModel.findOne({id:req.query.id}, function(err, doc){
       if (err) {
         console.log('图片资源出错：' + err);
       } 
@@ -43,9 +55,20 @@ module.exports = function(app) {
       }
     })
   });
-  app.get('/zone/myAlbum',function(req,res){
-    let name = req.query.name
-    db.albumModel.findOne({id:req.query.name}, function(err, doc){
+  app.get('/zone/like',function(req,res){
+    let id = req.query.id
+    db.pictureModel.findOne({id:req.query.id}, function(err, doc){
+      if (err) {
+        console.log('图片资源出错：' + err);
+      } 
+      else {
+        return res.json({code: 200, msg:'', data: doc})
+      }
+    })
+  });
+  app.get('/album',function(req,res){
+    let id = req.query.id
+    db.albumModel.findOne({id:req.query.id}, function(err, doc){
       if (err) {
         console.log('图片资源出错：' + err);
       } 
@@ -57,6 +80,18 @@ module.exports = function(app) {
   app.get('/zone/idol',function(req,res){
     let name = req.query.name
     db.userModel.findOne({name:req.query.name}, function(err, doc){
+      if (err) {
+        console.log('图片资源出错：' + err);
+      } 
+      else {
+        return res.json({code: 200, msg:'', data: doc})
+      }
+    })
+  });
+  app.get('/like',function(req,res){
+    let id = req.query.id;
+    let like = req.query.like;
+    db.userModel.update({name:sessionStorage.user.likes}, function(err, doc){
       if (err) {
         console.log('图片资源出错：' + err);
       } 
@@ -83,7 +118,8 @@ module.exports = function(app) {
             res.json({code: 700, msg:'密码不正确！'})
             return
           } else {
-            res.json({code: 200, msg:'密码正确，登录成功'})
+            res.json({code: 200, msg:'密码正确，登录成功',data: doc})
+            console.log(doc)
             return
           }
         }
@@ -114,12 +150,19 @@ module.exports = function(app) {
         } else {
           db.userModel.create({
             name: name,
-            pwd: pwd
+            pwd: pwd,
+            des: "talk is cheap,show me the code",
+            fans:[],
+            idols:[],
+            likes:[],
+            albums:[],
+            imgUrl:"http://p8tc04lo6.bkt.clouddn.com/cat.jpeg"
           }, function (err, doc) {
             if (err) {
               res.end('注册失败:' + err)
             } else {
               res.json({code: 200, msg:'用户注册成功：' + name})
+              sessionStorage.user = doc;
               return
             }
           })

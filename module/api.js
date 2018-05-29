@@ -63,9 +63,14 @@ module.exports = function (app) {
           res.json({code: 700, msg:'该用户名名已经被注册：' + name})
           return
         } else {
-          db.userModel.create({
+          db.userModel.insert({
             name: name,
-            pwd: pwd
+            pwd: pwd,
+            fans:[],
+            idols:[],
+            likes:[],
+            albums:[],
+            imgUrl:"http://p8tc04lo6.bkt.clouddn.com/cat.jpeg"
           }, function (err, doc) {
             if (err) {
               res.end('注册失败:' + err)

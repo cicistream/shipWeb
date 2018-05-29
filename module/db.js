@@ -7,7 +7,7 @@ const albumData = require('./album.json')
 mongoose.connect('mongodb://127.0.0.1:27017/shipWeb');
 // 用户信息的数据结构模型
 const userSchema = new Schema({
-  id:  String,
+  name: String,
   pwd:  String,
   imgUrl:  String,
   des:  String,
@@ -22,10 +22,10 @@ const pictureSchema = new Schema({
   name: String,
   imgUrl: String,
   des: String,
-  author: String,
   authorUrl: String,
   like: Number,
-  collect: Object,
+  albumId: Number,
+  album: String,
   albumUrl: String,
   tags: Array,
 })
@@ -33,12 +33,10 @@ const pictureSchema = new Schema({
 const albumSchema = new Schema({
   id: Number,
   name: String,
-  imgUrl: String,
   des: String,
   author: String,
   authorUrl: String,
   hasPic: Array,
-  fans: Array,
   tags: Array,
 });
 
