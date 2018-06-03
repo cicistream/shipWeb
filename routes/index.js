@@ -44,6 +44,31 @@ module.exports = function(app) {
       }
     })
   });
+  app.get('/zone/att',function(req,res){
+    let name = req.query.name;
+    let idol = req.query.idol;
+    let att = req.query.att;
+    if(req.query.att){
+      db.userModel.update({name:req.query.name},{"$push":{
+        "idols": req.query.idol
+      }})
+      console.log('set')  
+    }else{
+      db.userModel.update({name:req.query.name},{'$push': {
+        "idols": idol
+      }})
+      console.log("pull")
+    } 
+    db.userModel.findOne({name:req.query.name}, function(err, doc){
+      if (err) {
+        console.log('图片资源出错：' + err);
+      } 
+      else {
+        console.log(doc.idols)
+        return res.json({code: 200, msg:'', data: doc})
+      }
+    })
+  });
   app.get('/zone/myAlbum',function(req,res){
     let id = req.query.id
     db.albumModel.findOne({id:req.query.id}, function(err, doc){
