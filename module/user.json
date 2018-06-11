@@ -2,7 +2,7 @@
   {
     "name": "cicistream",
     "pwd": "ren1314",
-    "imgUrl": "http://p8tc04lo6.bkt.clouddn.com/10yuan.jpeg-shipHome",
+    "imgUrl": "http://p8tc04lo6.bkt.clouddn.com/10yuan.jpeg",
     "des": "nothing",
     "albums": [101],
     "idols": ["coco","Iris"],
@@ -13,7 +13,7 @@
   {
     "name": "Iris",
     "pwd": "ren1314",
-    "imgUrl": "http://p8tc04lo6.bkt.clouddn.com/allmight.jpeg-shipHome",
+    "imgUrl": "http://p8tc04lo6.bkt.clouddn.com/allmight.jpeg",
     "des": "随心吧",
     "albums": [102,103],
     "idols": ["cicistream"],
@@ -23,7 +23,7 @@
   {
     "name": "coco",
     "pwd": "ren1314",
-    "imgUrl": "http://p8tc04lo6.bkt.clouddn.com/cat.jpeg-shipHome",
+    "imgUrl": "http://p8tc04lo6.bkt.clouddn.com/cat.jpeg",
     "des": "没有什么想说的",
     "albums": [],
     "idols": [],
@@ -33,7 +33,7 @@
   {
     "name": "Kristen",
     "pwd": "ren1314",
-    "imgUrl": "http://p8tc04lo6.bkt.clouddn.com/coldplay.jpeg-shipHome",
+    "imgUrl": "http://p8tc04lo6.bkt.clouddn.com/coldplay.jpeg",
     "des": "没有什么想说的",
     "albums": [104],
     "idols": ["cicistream"],
@@ -43,7 +43,7 @@
   {
     "name": "Jack",
     "pwd": "ren1314",
-    "imgUrl": "http://p8tc04lo6.bkt.clouddn.com/cute.jpeg-shipHome",
+    "imgUrl": "http://p8tc04lo6.bkt.clouddn.com/cute.jpeg",
     "des": "没有什么想说的",
     "albums": [105],
     "idols": ["cicistream","Iris"],

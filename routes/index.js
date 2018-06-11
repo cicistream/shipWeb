@@ -44,27 +44,58 @@ module.exports = function(app) {
       }
     })
   });
-  app.get('/zone/att',function(req,res){
-    let name = req.query.name;
-    let idol = req.query.idol;
-    let att = req.query.att;
-    if(req.query.att){
-      db.userModel.update({name:req.query.name},{"$push":{
-        "idols": req.query.idol
-      }})
-      console.log('set')  
-    }else{
-      db.userModel.update({name:req.query.name},{'$push': {
-        "idols": idol
-      }})
-      console.log("pull")
-    } 
-    db.userModel.findOne({name:req.query.name}, function(err, doc){
+  app.get('/album/delete',function(req,res){
+    let id = req.query.id;
+    db.albumModel.findOne({id:req.query.id}, function(err, doc){
       if (err) {
         console.log('图片资源出错：' + err);
       } 
       else {
-        console.log(doc.idols)
+        console.log(name);
+        return res.json({code: 200, msg:'', data: doc})
+      }
+    })
+  });
+  app.get('/zone/att',function(req,res){
+    let name = req.query.name;
+    let idol = req.query.idol;
+    let att = req.query.att;
+    if(att == 1){
+      db.userModel.update({name:req.query.name},{$pull:{
+        "idols": req.query.idol
+      }},function(err,result){  
+        if (err) return console.error(err);  
+        console.log(result);  
+        });
+      db.userModel.update({name:req.query.idol},{$pull:{
+        "fans": req.query.name
+      }},function(err,result){  
+        if (err) return console.error(err);  
+        console.log(result);  
+        }); 
+      console.log('pull')  
+    }else{
+      db.userModel.update({name:req.query.name},{$push:{
+        "idols": req.query.idol 
+      }},function(err,result){  
+        if (err) return console.error(err);  
+        console.log(result);  
+        });  
+      console.log("push")
+      db.userModel.update({name:req.query.idol},{$push:{
+        "fans": req.query.name
+      }},function(err,result){  
+        if (err) return console.error(err);  
+        console.log(result);  
+        });  
+      console.log("push")
+    } 
+    db.userModel.findOne({name:req.query.name}, function(err, doc){
+      if (err) {
+        console.log('用户资源出错：' + err);
+      } 
+      else {
+        console.log(doc)
         return res.json({code: 200, msg:'', data: doc})
       }
     })
@@ -114,15 +145,10 @@ module.exports = function(app) {
     })
   });
   app.get('/like',function(req,res){
+    let name = req.query.name;
     let id = req.query.id;
     let like = req.query.like;
-    db.userModel.update({name:sessionStorage.user.likes}, function(err, doc){
-      if (err) {
-        console.log('图片资源出错：' + err);
-      } 
-      else {
-        return res.json({code: 200, msg:'', data: doc})
-      }
+    db.userModel.update({name:req.query.name}, {$set
     })
   });
   app.get('/login',function(req,res){
@@ -150,6 +176,23 @@ module.exports = function(app) {
         }
 
       }
+    })
+  });
+  app.get('/user',function(req,res){
+    let name = req.query.name
+    let pwd = req.query.pwd
+    db.userModel.findOne({name:req.query.name}, function(err, doc){
+      if (err) {
+        console.log('查询出错：' + err);
+        res.json({code: 700, msg:'查询出错：' + err})
+        return
+      } else {
+        if(doc.pwd!=pwd){
+          db.userModel.update({name: req.query.name},{$set:{"pwd":pwd}})
+        }
+            res.json({code: 200, msg:'修改成功!',data: doc})
+            console.log(doc)
+          }
     })
   });
   app.get('/newUser',function(req,res){
